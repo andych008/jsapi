@@ -1,0 +1,29 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+
+.btn {
+    width: 100px;
+    background-color: gray;
+    margin-right: 50px;
+    vertical-align:middle;
+    line-height:100px;
+}
+
+div.line {
+    line-height:150px;
+    align-content: center;
+    vertical-align:middle;
+}
+
+
+div.line button {
+    margin-right: 20px;
+    width: 220px;
+    height:100px;
+}
+
