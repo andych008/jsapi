@@ -10,7 +10,7 @@
     <h2>轻程序相关</h2>
     <hr />
     <div class="line">
-        <button id="getSystemInfo">获取平台信息</button>
+        <button id="umGetSystemInfo">获取平台信息</button>
         <button id="umGetUserInfo">获取用户信息</button>
         <button id="umStartOne">打开轻程序</button>
     </div>
@@ -23,9 +23,7 @@
     <h2>定位</h2>
     <hr />
     <div class="line">
-        <button id="baidu">百度定位</button>
         <button id="gaode">高德定位</button>
-        <button id="locationH5">高德定位(天枢api)</button>
     </div>
 
     <h2>扫码</h2>
@@ -217,7 +215,7 @@
             return f2;
         }
 
-        bindClickAndExec("getSystemInfo")
+        bindClickAndExec("umGetSystemInfo")
         bindClickAndExec("umGetUserInfo")
         bindClickAndExec("umStartOne", api = null, param = { qpId: "QPID-fa9ffd15ce4a4e60ba0b42d37e52ec54" })
         bindClickAndExec("umGetQAppId")
@@ -225,8 +223,7 @@
 
 
         bindClickAndExec("baidu", 'umGetBDLocation')
-        bindClickAndExec("gaode", 'umGetGDLocation')
-        bindClickAndExec("locationH5")
+
 
 
         bindClickAndExec("umScan")
