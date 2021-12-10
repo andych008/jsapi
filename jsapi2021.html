@@ -171,15 +171,15 @@
             return f2;
         }
 
-        function SwitchBinder(eleId, api1, api2) {
-            var flag = false;
+        function SwitchBinder(eleId, api1, api2, defVal=false) {
+            var flag = defVal;
             function f2() {
                 bindClick(eleId, api1 + "\n" + api2, () => {
-                    event.target.style['background-color'] = flag ? '' : '#4fe7af';
 
-                    AlipayJSBridge.call(flag ? api2 : api1);
 
                     flag = !flag;
+                    event.target.style['background-color'] = flag ? '#4fe7af' : '';
+                    AlipayJSBridge.call(flag ? api1 : api2);
                 })
             }
 
@@ -269,17 +269,33 @@
 
         SwitchBinder("umShowQAppBackArrow", "umShowQAppBackArrow", "umHideQAppBackArrow")()
         SwitchBinder("umShowQAppNavBarLoading", "umShowQAppNavBarLoading", "umHideQAppNavBarLoading")()
-        SwitchBinder("umShowQAppNavBar", "umShowQAppNavBar", "umHideQAppNavBar")()
+        SwitchBinder("umShowQAppNavBar", "umShowQAppNavBar", "umHideQAppNavBar", true)()
+        initStyle("umShowQAppNavBar",  true)
 
         bindClickAndExec("umGetMenuButtonBoundingClientRect")
 
 
-        SwitchBinder("umShowShareMenu", "umShowShareMenu", "umHideShareMenu")()
+        function initStyle(eleId, flag=false) {
+            let element = document.getElementById(eleId)
+            element.style['background-color'] = !flag ? '' : '#4fe7af';
+        }
+         let myInit = function() {
+            AlipayJSBridge.call("umGetConfig", {}, (result) => {
+                console.log(JSON.stringify(result))
+                var umGetConfig = result.bussData
+                initStyle("umShowShareMenu",)
+        initStyle("umShowShareMenu",  umGetConfig.isShowShare)
+        initStyle("umShowThumbUpMenu",  umGetConfig.isShowThumbUp)
+        initStyle("umShowEvaluateMenu", umGetConfig.isShowEvaluate)
+        SwitchBinder("umShowShareMenu", "umShowShareMenu", "umHideShareMenu", umGetConfig.isShowShare)()
+        SwitchBinder("umShowThumbUpMenu", "umShowThumbUpMenu", "umHideThumbUpMenu", umGetConfig.isShowThumbUp)()
+        SwitchBinder("umShowEvaluateMenu", "umShowEvaluateMenu", "umHideEvaluateMenu", umGetConfig.isShowEvaluate)()
+            });
+        }
+        setTimeout(myInit, 1500);
         bindClickAndExec("umGetShareInfo")
 
 
-        SwitchBinder("umShowThumbUpMenu", "umShowThumbUpMenu", "umHideThumbUpMenu")()
-        SwitchBinder("umShowEvaluateMenu", "umShowEvaluateMenu", "umHideEvaluateMenu")()
 
 
 
