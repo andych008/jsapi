@@ -26,7 +26,9 @@
     <div class="line">
         <button id="umRPCNetwork">昆仑网关测试</button>
     </div>
-
+    <div class="line">
+        <button id="umQloudPost">umQloudPost</button>
+    </div>
 
     <h2>定位</h2>
     <hr />
@@ -97,6 +99,7 @@
     <hr />
 
     <hr />
+
 
 
 
@@ -189,6 +192,23 @@
         bindClickAndExec("umStartQApp")
         bindClickAndExec("umGetQAppId")
         bindClickAndExec("umGetQAppVersion")
+
+        bindClickAndExec("umQloudPost",api = null,param = {'path': '/qcloud/api/zh/test-udesk/test/getappid', 'query':'',
+  'headers':{
+            'X-Date': '20211203145553',
+            'X-Hmac': 'O8X3PudcTn3mpR/4HcdZ+dT/VE4=',
+            'content-md5': 'NzJjYTVlMDM5OWIxMjg2ZTZjMDE5MjNlOThjMTI4YWY=',
+            'content-type': 'application/json',
+            'x-qc-accesskey': 'RtaQaYm2nxrX3yWd',
+            'x-qc-branch': 'zh',
+            'x-qc-developer': '',
+            'x-qc-env': 'test',
+            'x-qc-functionname': 'getappid',
+            'x-qc-qcappid': 'zh-test-udesk',
+            'x-qc-qcappname': 'test-udesk',
+            'x-qc-requestid': '0eb59180540611ecb8a3a7097105efae',
+            'x-qc-timeout': 60000
+        },'body':'{\"path\":\"/qcloud/api/zh/test-udesk/test/getappid\",\"body\":\"{\\\"path\\\":\\\"123\\\",\\\"body\\\":\\\"123\\\",\\\"headers\\\":\\\"\\\",\\\"query\\\":\\\"123\\\"}\",\"headers\":{\"X-Date\":\"20211126134622\",\"X-Hmac\":\"ewZKIA4GPi2VszSaz0x5n4Et7bw=\",\"content-md5\":\"YWJjNmE3NzQwZmMwNjBlYTU3MWFjMzVkM2VlYzkxMDg=\",\"content-type\":\"application/json\",\"x-qc-accesskey\":\"RtaQaYm2nxrX3yWd\",\"x-qc-branch\":\"zh\",\"x-qc-developer\":\"\",\"x-qc-env\":\"test\",\"x-qc-functionname\":\"getappid\",\"x-qc-qcappid\":\"zh-test-udesk\",\"x-qc-qcappname\":\"test-udesk\",\"x-qc-requestid\":\"2f86aff04e7c11ecbf6cdbce0f475e25\",\"x-qc-timeout\":\"60000\"},\"query\":\"\"}'})
 
         bindClickAndExec("umMediaUpload",api = null,param = {'qcappid':'zh-easy-qc-zyx','bucket':'zh-easy-qc-zyx','filePath':'aa','fileName':'fn'})
         bindClickAndExec("umRPCNetwork", api = null, param = {'header':{'Nonce':'5f7e75f75d4570a08adda0065741d366','X-Requested-With':'XMLHttpRequest','operationType':'com.abchina.ditingMobile.login','ReqSource':'ditingMobile'},'reqJson':'{"userName":"wangyaoyfzx","checkCode":"usap1234!()"}','operationType':'com.abchina.ditingMobile.login','timeOut':20000})
