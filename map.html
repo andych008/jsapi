@@ -20,10 +20,15 @@
 <div class="info">
     <h4 id="status"></h4><hr>
     <p id="result"></p><hr>
-    <p >由于众多浏览器已不再支持非安全域的定位请求，为保位成功率和精度，请升级您的站点到HTTPS。</p>
 </div>
 
-<script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=045fd61b48ff688c5bbee8d4c8c9c42c"></script>
+<script type="text/javascript">
+    window._AMapSecurityConfig = {
+        securityJsCode:'429b067dd5e12e666b7ecec4b5552678',
+    }
+</script>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=045fd61b48ff688c5bbee8d4c8c9c42c"></script>
+<!-- <script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=045fd61b48ff688c5bbee8d4c8c9c42c"></script> -->
 <script type="text/javascript">
     var map = new AMap.Map('container', {
         resizeEnable: true
@@ -56,6 +61,7 @@
              str.push('精度：' + data.accuracy + ' 米');
         }//如为IP精确定位结果则没有精度信息
         str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
+        str.push('地址：' + data.formattedAddress);
         document.getElementById('result').innerHTML = str.join('<br>');
     }
     //解析定位错误信息

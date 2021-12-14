@@ -11,14 +11,12 @@ https://lbs.amap.com/demo/jsapi-v2/example/location/browser-location
 
 <script type="text/javascript">
 
-    function lbsUrl() {
-        let url = `lbs.html?time=${new Date().getTime()}`
-        console.log(url, 'url')
+    function mapUrl() {
+        let url = `map.html?time=${new Date().getTime()}`
         location.href = url
     }
     function locationUrl() {
         let url = `location.html?time=${new Date().getTime()}`
-        console.log(url, 'url')
         location.href = url
     }
 
@@ -29,7 +27,7 @@ https://lbs.amap.com/demo/jsapi-v2/example/location/browser-location
     <hr />
     <div class="line">
         <!-- https://lbs.amap.com/demo/jsapi-v2/example/location/browser-location -->
-        <a href = "javascript:void(0);" onclick ="lbsUrl()">浏览器精确定位</a>
+        <a href = "javascript:void(0);" onclick ="mapUrl()">地图及定位</a>
         <a href = "javascript:void(0);" onclick ="locationUrl()">定位api</a>
     </div>
 
