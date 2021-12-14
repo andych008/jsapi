@@ -6,6 +6,7 @@ a {
   color: #00b7ff;
 }
 
+
 .btn {
     width: 100px;
     background-color: gray;
@@ -25,5 +26,10 @@ div.line button {
     margin-right: 20px;
     width: 220px;
     height:100px;
+}
+
+
+div.line a {
+    margin: 50px;
 }
 

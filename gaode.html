@@ -1,0 +1,39 @@
+https://lbs.amap.com/demo/jsapi-v2/example/location/browser-location
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>高德示例</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+</head>
+
+<script type="text/javascript">
+
+    function lbsUrl() {
+        let url = `lbs.html?time=${new Date().getTime()}`
+        console.log(url, 'url')
+        location.href = url
+    }
+    function locationUrl() {
+        let url = `location.html?time=${new Date().getTime()}`
+        console.log(url, 'url')
+        location.href = url
+    }
+
+</script>
+
+<body>
+    <h2>高德示例</h2>
+    <hr />
+    <div class="line">
+        <!-- https://lbs.amap.com/demo/jsapi-v2/example/location/browser-location -->
+        <a href = "javascript:void(0);" onclick ="lbsUrl()">浏览器精确定位</a>
+        <a href = "javascript:void(0);" onclick ="locationUrl()">定位api</a>
+    </div>
+
+
+</body>
+
+</html>
