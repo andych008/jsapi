@@ -112,6 +112,20 @@
 
     <script type="text/javascript">
 
+        document.addEventListener("umRPCNetwork",
+            function (result) {
+                console.log(result);
+                alert(JSON.stringify(result));
+            },
+            false
+        );
+        document.addEventListener("umQloudPost",
+            function (result) {
+                console.log(result);
+                alert(JSON.stringify(result));
+            },
+            false
+        );
 
         if (!window.navigator.userAgent.match('NebulaSDK')) {
 
